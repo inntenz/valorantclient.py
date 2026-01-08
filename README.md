@@ -6,24 +6,23 @@
 
 ## Installation
 ```python
-pip install valorantclient
+pip install intenzclient
 ```
 
 ## Example
 
 ```python
-from valorantclient.client import Client
+from intenzclient import Client
 
-client = Client(region="na")
+client = Client(region="eu")
 client.activate()
 
-# get MatchID of latest match
-history = client.fetch_match_history(queue_id="unrated")
-print(history["History"][0]["MatchID"])
+print(client.fetch_account_xp())
 ```
 
 ## Notes
 - don't use this to make anything that's obviously against TOS (i.e. automatic agent selecting program)
 - just don't be dumb :)
+
 
 
