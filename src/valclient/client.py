@@ -1047,12 +1047,7 @@ class Client:
         return self.coregame_fetch_player()["MatchID"] if match_id is None else match_id
 
     def __pregame_check_match_id(self, match_id) -> str:
-        return self.pregame_fetch_player()["MatchID"] if match_id is None else match_id
-
-    def __check_queue_type(self, queue_id) -> t.NoReturn:
-        """Check if queue id is valid"""
-        if queue_id not in queues:
-            raise ValueError("Invalid queue type")
+        return self.pregame_fetch_player()["MatchID"] if match_id is None else match_id   
 
     def __build_urls(self) -> str:
         """Generate URLs based on region/shard"""
@@ -1115,3 +1110,4 @@ class Client:
                 return dict(zip(keys, data))
         except:
             raise LockfileError("Lockfile not found")
+
